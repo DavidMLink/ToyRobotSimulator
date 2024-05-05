@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { ToyRobotSimulator } from './ToyRobotSimulator/ToyRobotSimulator';
+import { ScrapGame } from './ScrapGame/ScrapGame';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	const [playScrapGame, setPlayScrapGame] = useState(false);
+
+	return (
+		<div className='App'>
+			<div
+				className='switch-game-button'
+				style={{ position: 'absolute', top: 10, right: 10 }}
+			>
+				<button
+					onClick={() => {
+						setPlayScrapGame(!playScrapGame);
+					}}
+				>
+					{playScrapGame
+						? 'Switch to Toy Robot Simulator'
+						: 'Switch to Scrap Game'}
+				</button>
+			</div>
+			<h1 className='game-title'>
+				{playScrapGame ? 'Scrap Game' : 'Toy Robot Simulator'}
+			</h1>
+			{playScrapGame ? (
+				<ScrapGame></ScrapGame>
+			) : (
+				<ToyRobotSimulator></ToyRobotSimulator>
+			)}
+			{/* <Overlay></Overlay> */}
+		</div>
+	);
+};
 
 export default App;

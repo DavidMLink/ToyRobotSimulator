@@ -1,0 +1,49 @@
+.App {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.grid {
+	display: grid;
+	gap: 1px;
+}
+
+.row {
+	display: flex;
+}
+
+.cell {
+	width: 40px;
+	height: 40px;
+	background-color: #f0f0f0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.controls {
+	margin-top: 20px;
+}
+
+.robot {
+	transition: transform 0.3s ease;
+}
+
+.robot.north {
+	transform: rotate(0deg);
+}
+
+.robot.east {
+	transform: rotate(90deg);
+}
+
+.robot.south {
+	transform: rotate(180deg);
+}
+
+.robot.west {
+	transform: rotate(-90deg);
+}

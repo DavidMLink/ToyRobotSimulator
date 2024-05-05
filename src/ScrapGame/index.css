@@ -1,0 +1,74 @@
+.App {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.grid {
+	display: grid;
+	gap: 1px;
+}
+
+.row {
+	display: flex;
+}
+
+.cell {
+	width: 40px;
+	height: 40px;
+	background-color: #f0f0f0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.controls {
+	margin-top: 20px;
+}
+
+.robot {
+	transition: transform 0.3s ease;
+}
+
+.robot.north {
+	transform: rotate(0deg);
+}
+
+.robot.east {
+	transform: rotate(90deg);
+}
+
+.robot.south {
+	transform: rotate(180deg);
+}
+
+.robot.west {
+	transform: rotate(-90deg);
+}
+
+.overlay {
+	position: fixed; /* Fixed position to cover the whole screen */
+	top: 0;
+	left: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+	color: white; /* White text color */
+	font-size: 24px; /* Larger text */
+	z-index: 10; /* High z-index to be on top of other elements */
+}
+
+.modal-content {
+	background: white; /* Background of the modal content */
+	padding: 20px; /* Padding around the text */
+	border-radius: 10px; /* Rounded corners */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+	color: black; /* Text color inside the modal */
+	width: 50%; /* Typical modal width */
+	text-align: center; /* Centered text */
+}
